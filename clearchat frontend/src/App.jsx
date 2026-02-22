@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { connectWS } from './ws';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+ 
+    return (
+        <div className="min-h-screen flex items-center justify-center bg-zinc-100 p-4 font-inter">
+            {/* ENTER YOUR NAME TO START CHATTING */}
+            {showNamePopup && (
+                <div className="fixed inset-0 flex items-center justify-center z-40">
+                    <div className="bg-white rounded-xl shadow-lg max-w-md p-6">
+                        <h1 className="text-xl font-semibold text-black">Enter your name</h1>
+                        <p className="text-sm text-gray-500 mt-1">
+                            Enter your name to start chatting. This will be used to identify
+                        </p>
+                        <form onSubmit={handleNameSubmit} className="mt-4">
+                            <input
+                                autoFocus
+                                value={inputName}
+                                onChange={(e) => setInputName(e.target.value)}
+                                className="w-full border border-gray-200 rounded-md px-3 py-2 outline-green-500 placeholder-gray-400"
+                                placeholder="Your name that"
+                            />
+                            <button
+                                type="submit"
+                                className="block ml-auto mt-3 px-4 py-1.5 rounded-full bg-green-500 text-white font-medium cursor-pointer">
+                                Continue
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            )}
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+          
+        </div>
+    );
 }
-
-export default App
