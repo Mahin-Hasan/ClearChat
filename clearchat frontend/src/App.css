@@ -1,42 +1,56 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import "tailwindcss";
+
+
+.cc-high-contrast {
+    background: #0b0b0b !important;
+    color: #fff !important;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.cc-high-contrast .bg-white,
+.cc-high-contrast .bg-white\/90,
+.cc-high-contrast .bg-white\/70 {
+    background: #121212 !important;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cc-high-contrast .text-zinc-900,
+.cc-high-contrast .text-zinc-700,
+.cc-high-contrast .text-zinc-600,
+.cc-high-contrast .text-zinc-500 {
+    color: #f7f7f7 !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.cc-high-contrast .border-zinc-100,
+.cc-high-contrast .border-zinc-200,
+.cc-high-contrast .border-violet-900\/10,
+.cc-high-contrast .border-zinc-200\/70 {
+    border-color: #facc15 !important;
 }
 
-.card {
-  padding: 2em;
+.cc-monochrome {
+    filter: grayscale(1);
 }
 
-.read-the-docs {
-  color: #888;
+.cc-reduced-motion *,
+.cc-reduced-motion *::before,
+.cc-reduced-motion *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+}
+
+.cc-large-cursor,
+.cc-large-cursor * {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24'%3E%3Cpath fill='%23111111' stroke='%23ffffff' stroke-width='1.4' d='M4 3l7.8 15.2l1.86-5.28l5.34-1.95z'/%3E%3C/svg%3E") 4 4, auto !important;
+}
+
+.cc-focus-highlight button:focus-visible,
+.cc-focus-highlight textarea:focus-visible,
+.cc-focus-highlight input:focus-visible {
+    outline: 3px solid #fb7185 !important;
+    outline-offset: 2px !important;
+}
+
+.cc-easy-read,
+.cc-easy-read * {
+    font-family: Arial, Verdana, Tahoma, sans-serif !important;
 }
